@@ -36,7 +36,6 @@ public class ProductDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_product_detail, container, false);
         vpImagesContainer = view.findViewById(R.id.vpImagesContainer);
 
-        setViewPager();
         FirebaseFirestore.getInstance()
         .collection("ProductModel").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
