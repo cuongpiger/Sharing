@@ -11,7 +11,6 @@ PARAMS:
     email: là email của người dùng, lấy từ view.
     password: là password của người dùng, lấy từ view.
 */
-
 private void signIn(String email, String password) {
     FirebaseAuth.getInstance()
         .signInWithEmailAndPassword(email, password)
