@@ -29,13 +29,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.viewpager.widget.ViewPager;
 
 public class ProductDetailFragment extends Fragment {
-    private ViewPager vpImagesContainer;
+    
+    ViewPager vpImagesContainer;
+    MaterialButton mAddCart;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_product_detail, container, false);
+        
         vpImagesContainer = view.findViewById(R.id.vpImagesContainer);
-
         FirebaseFirestore.getInstance()
         .collection("ProductModel").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -46,6 +48,9 @@ public class ProductDetailFragment extends Fragment {
                 vpImagesContainer.setAdapter(new ProductImageAdapter(url));
             }
         });
+
+        mAddCart = view.findViewById(R.id.mbAddCart);
+        mAdd
 
         return view;
     }
