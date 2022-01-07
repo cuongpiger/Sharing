@@ -1,0 +1,33 @@
+export HADOOP_CLASSPATH=$(hadoop classpath)
+
+echo $HADOOP_CLASSPATH
+
+hadoop fs -mkdir /WordCountTutorial
+
+cd hadoop-3.2.1/
+
+start-dfs.sh 
+
+start-yarn.sh 
+
+jps
+
+cd ..
+
+hadoop fs -mkdir /WordCountTutorial
+
+hadoop fs -mkdir /WordCountTutorial/Input
+
+hadoop fs -put '/home/ubuntu/Desktop/input.txt' /WordCountTutorial/Input
+
+cd /home/ubuntu/Desktop/WordCountTutorial/
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/ubuntu/Desktop/WordCountTutorial/tutotial_classes' '/home/ubuntu/Desktop/WordCountTutorial/WordCount.java' 
+
+jar -cvf firstTutorial.jar -C tutorial_classes/ .
+
+hadoop jar '/home/ubuntu/Desktop/WordCountTutorial/firstTutorial.jar' WordCount /WordCountTutorial/Input /WordCountTutorial/Output
+
+hadoop dfs -cat /WordCountTutorial/Output/*
+
+
