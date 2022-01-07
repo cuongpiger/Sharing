@@ -1,0 +1,10 @@
+IT	DuongManhCuong	10000000
+NS	NguyenHuynhNguyetQue	7000000
+IT	DangKhanhHung	4000000
+NS	DamVinhHung	1000000
+IT	UngHoangPhuc	700000
+NS	HoangDung	2300000
+NV	TruongVu	1200000
+NV	TangThanhHa	1000000
+NV	LuongManhHai	1100000
+IT	HieuHien	700000
