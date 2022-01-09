@@ -1,9 +1,0 @@
-hadoop fs -mkdir /Assignment_09
-
-hadoop fs -mkdir /Assignment_09/Input
-
-hadoop fs -put '/home/ubuntu/Desktop/Assignment_09/input.txt' /Assignment_09/Input
-
-cd /home/ubuntu/Desktop/Assignment_09/
-
-hadoop jar '/home/ubuntu/Desktop/Assignment_09/Assignment_09.jar' Assignment_09 /Assignment_09/Input /Assignment_09/Output
